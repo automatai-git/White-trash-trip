@@ -1,6 +1,9 @@
 import heroImg from '../assets/texas_hero_skull_1776277104906.png';
 import heliImg from '../assets/heli_hogs_action_1776277120235.png';
 import bbqImg from '../assets/texas_bbq_brisket_1776277135312.png';
+import suvsImg from '../assets/convoy_suvs_1776277619429.png';
+import pbrImg from '../assets/pbr_bull_riding_1776277637131.png';
+import nascarImg from '../assets/nascar_racing_1776277654488.png';
 
 export const TRIP_META = {
   title: "THE ULTIMATE TEXAS REDNECK WEEK",
@@ -13,6 +16,15 @@ export const TRIP_META = {
   heroImage: heroImg
 };
 
+export const PRE_FLIGHT_CHECKLIST = [
+  "Order the official 'Texas Redneck Week' Squad T-Shirts",
+  "Sign all death waivers for HeliBacon",
+  "Purchase extreme sports travel insurance (for the bull riding)",
+  "Start drinking Shiner Bock to build liver tolerance",
+  "Watch 'Urban Cowboy' to prepare mentally",
+  "Pre-book the 15-passenger convoy van"
+];
+
 export const ITINERARY = [
   {
     id: "day-1",
@@ -24,27 +36,27 @@ export const ITINERARY = [
     events: [
       {
         time: "Afternoon",
-        title: "Arrive & Check In",
-        description: "Fly into DFW. Rent 2-3 large SUVs or a 15-passenger van. Head straight to the Airbnb in the Fort Worth Stockyards area.",
-        icon: "✈️"
+        title: "Arrive & Check In. DFW to Basecamp.",
+        description: "Rent 2-3 massive SUVs. Head straight to the Airbnb in the Fort Worth Stockyards area.",
+        image: suvsImg
       },
       {
         time: "4:00 PM",
         title: "Fort Worth Herd Cattle Drive",
-        description: "Walk Exchange Avenue. Catch the real longhorn cattle driven down the street. Browse western wear shops and buy everyone a cowboy hat.",
-        icon: "🐂"
+        description: "Catch the real longhorn cattle driven down the street. Browse western wear shops and buy everyone a cowboy hat.",
+        image: heroImg
       },
       {
         time: "Evening",
-        title: "Steaks at Cattlemen's or Lonesome Dove",
-        description: "Get the bone-in ribeye. You're in Texas.",
-        icon: "🥩"
+        title: "Steaks at Cattlemen's",
+        description: "Get the bone-in ribeye. Welcome to Texas.",
+        image: bbqImg
       },
       {
         time: "Late Night",
         title: "Billy Bob's Texas",
-        description: "The world's largest honky tonk. 120,000 sq ft, 30+ bar stations, live music, and real indoor/mechanical bull riding.",
-        icon: "🍻"
+        description: "The world's largest honky tonk. 120,000 sq ft, 30+ bar stations, live music, and real indoor bull riding.",
+        image: pbrImg
       }
     ]
   },
@@ -55,25 +67,24 @@ export const ITINERARY = [
     theme: "HOGS FROM HEAVEN",
     headline: "HeliBacon: Heli Hog Hunt + Machine Guns",
     color: "#ff7b00",
-    image: heliImg,
     events: [
       {
         time: "Morning",
-        title: "Drive to Bryan, TX",
+        title: "Convoy to Bryan, TX",
         description: "2.5 hour drive southeast to HeliBacon HQ.",
-        icon: "🚙"
+        image: suvsImg
       },
       {
         time: "Midday",
         title: "Helicopter Hog Hunting",
-        description: "The crown jewel. 1-hour safety course, 2-hour flight over 300,000 acres. Suppressed AR-15 (full-auto upgrade required). No bag limit. You will shoot from an airborne Bell 212 HP twin-engine helicopter.",
-        icon: "🚁"
+        description: "The crown jewel. 2-hour flight. Suppressed full-auto AR-15. No bag limit. You will shoot from an airborne Bell 212 HP twin-engine helicopter.",
+        image: heliImg
       },
       {
         time: "Afternoon",
-        title: "Machine Gun Range",
-        description: "Post-hunt chaser: M134 Minigun (3,000 rounds/min), M2 'Ma Deuce' .50 cal, MG42 Buzzsaw, Tommy Guns.",
-        icon: "💥"
+        title: "Heavy Metal Range",
+        description: "Post-hunt chaser: M134 Minigun, M2 .50 cal, MG42 Buzzsaw.",
+        image: heroImg
       }
     ]
   },
@@ -87,15 +98,15 @@ export const ITINERARY = [
     events: [
       {
         time: "Morning",
-        title: "Texas Gun Experience (Grapevine)",
-        description: "If HeliBacon wasn't enough, we hit Texas Gun Experience. Indoor range with massive full-auto selection.",
-        icon: "🔫"
+        title: "Texas Gun Experience",
+        description: "Indoor range with massive full-auto selection.",
+        image: heliImg
       },
       {
         time: "Evening",
         title: "PBR Stockyards Showcase",
-        description: "Cowtown Coliseum. This is Professional Bull Riders. The big leagues. The most violent 8 seconds in sports.",
-        icon: "🤠"
+        description: "Professional Bull Riders. The most violent 8 seconds in sports.",
+        image: pbrImg
       }
     ]
   },
@@ -106,25 +117,18 @@ export const ITINERARY = [
     theme: "TEXAS BBQ PILGRIMAGE",
     headline: "Goldee's & Rodeo",
     color: "#8B4513",
-    image: bbqImg,
     events: [
       {
         time: "Morning (Early)",
-        title: "Line up at Goldee's BBQ",
-        description: "The #1 BBQ joint in Texas (Texas Monthly). Arrive by 8:30 AM with lawn chairs and beers. Doors open at 11:00 AM. Worth the wait.",
-        icon: "🔥"
-      },
-      {
-        time: "Afternoon",
-        title: "Meat Coma",
-        description: "Eat obscene amounts of brisket, ribs, and sausage on butcher paper. Return to basecamp to recover.",
-        icon: "💤"
+        title: "Goldee's BBQ",
+        description: "The #1 BBQ joint in Texas. Arrive with lawn chairs and beers.",
+        image: bbqImg
       },
       {
         time: "7:30 PM",
         title: "Stockyards Championship Rodeo",
         description: "Cowtown Coliseum. Bull riding, broncos, barrel racing. Afterwards, hit the honky tonk.",
-        icon: "🐎"
+        image: pbrImg
       }
     ]
   },
@@ -133,26 +137,20 @@ export const ITINERARY = [
     day: "Day 5",
     date: "Saturday, June 20",
     theme: "THE GRAND FINALE",
-    headline: "Bass Pro, Rodeo, Billy Ray Cyrus",
+    headline: "Bass Pro, Rodeo, Billy Ray",
     color: "#0055ff",
     events: [
-      {
-        time: "Morning",
-        title: "Bass Pro Shops (Grapevine)",
-        description: "Buy matching camo gear for the group photo. Massive aquarium, shooting arcade, tactical outdoor everything.",
-        icon: "🎣"
-      },
       {
         time: "Midday",
         title: "NASCAR Racing Experience",
         description: "Drive an actual NASCAR stock car around Texas Motor Speedway. 8 laps at up to 160 mph.",
-        icon: "🏎️"
+        image: nascarImg
       },
       {
         time: "10:00 PM",
-        title: "Billy Ray Cyrus at Billy Bob's",
-        description: "CONFIRMED: Billy Ray Cyrus live. The absolute perfect closer for your redneck week - 'Achy Breaky Heart' live with 12 Norwegian guys in cowboy hats. Peak redneck achievement.",
-        icon: "🎸"
+        title: "Billy Ray Cyrus Live",
+        description: "The absolute perfect closer for your redneck week - 'Achy Breaky Heart' live with 12 Norwegian guys in cowboy hats.",
+        image: pbrImg
       }
     ]
   },
@@ -161,26 +159,20 @@ export const ITINERARY = [
     day: "Day 6",
     date: "Sunday, June 21",
     theme: "Recovery & Departure",
-    headline: "Whataburger, Buc-ee's, Airport",
+    headline: "Whataburger, Buc-ee's",
     color: "#111111",
     events: [
       {
         time: "Morning",
         title: "Whataburger Breakfast",
         description: "Honey Butter Chicken Biscuit for breakfast. A Texas religious experience.",
-        icon: "🍔"
-      },
-      {
-        time: "Midday",
-        title: "Buc-ee's Final Stop",
-        description: "Grab souvenirs, beef jerky for the flight home, and kolaches.",
-        icon: "🦫"
+        image: bbqImg
       },
       {
         time: "Afternoon",
         title: "Fly Home",
-        description: "Depart DFW. Arrive in Norway sunburned, full of brisket, and with helicopter hog hunting footage that will make everyone jealous.",
-        icon: "🛫"
+        description: "Arrive in Norway sunburned, full of brisket, and with helicopter hog hunting footage.",
+        image: suvsImg
       }
     ]
   }
