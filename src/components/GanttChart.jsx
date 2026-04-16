@@ -14,10 +14,7 @@ const DATES = [
 const GanttChart = ({ participants }) => {
   const isPresent = (arr, dep, current) => {
     if (!arr || !dep) return false;
-    const a = new Date(arr);
-    const d = new Date(dep);
-    const c = new Date(current);
-    return c >= a && c <= d;
+    return current >= arr && current <= dep;
   };
 
   return (

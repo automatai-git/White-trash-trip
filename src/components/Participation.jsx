@@ -7,6 +7,7 @@ const Participation = ({ playerName }) => {
   const [participants, setParticipants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [viewGantt, setViewGantt] = useState(false);
+  const [saveStatus, setSaveStatus] = useState('');
 
   // Form State
   const [arrDate, setArrDate] = useState('');
@@ -36,30 +37,48 @@ const Participation = ({ playerName }) => {
 
   const handleSave = async (e) => {
     e.preventDefault();
+    setSaveStatus('Saving...');
+    let hasError = false;
+
     const me = participants.find(d => d.player_name === playerName);
     
     if (me) {
       // Update
-      await supabase
+      const { error } = await supabase
         .from('trip_participants')
         .update({
-          arrival_date: arrDate,
+          arrival_date: arrDate || null,
           arrival_transport: arrTrans,
-          departure_date: depDate,
+          departure_date: depDate || null,
           departure_transport: depTrans
         })
         .eq('player_name', playerName);
+      if (error) {
+        console.error("Update error:", error);
+        hasError = true;
+      }
     } else {
       // Insert
-      await supabase
+      const { error } = await supabase
         .from('trip_participants')
         .insert([{
           player_name: playerName,
-          arrival_date: arrDate,
+          arrival_date: arrDate || null,
           arrival_transport: arrTrans,
-          departure_date: depDate,
+          departure_date: depDate || null,
           departure_transport: depTrans
         }]);
+      if (error) {
+        console.error("Insert error:", error);
+        hasError = true;
+      }
+    }
+
+    if (!hasError) {
+      setSaveStatus('SAVED SUCCESSFULLY!');
+      setTimeout(() => setSaveStatus(''), 3000);
+    } else {
+      setSaveStatus('ERROR: DB MISSING OR ACCESS DENIED.');
     }
     fetchParticipants();
   };
@@ -116,7 +135,14 @@ const Participation = ({ playerName }) => {
                   </div>
                 </div>
                 
-                <button type="submit" className="blackops" style={{padding: '15px', background: 'var(--accent)', border: 'none', color: 'black', fontSize: '1.2rem', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.2s', letterSpacing: '1px'}}>SAVE LOGISTICS</button>
+                <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
+                  <button type="submit" className="blackops" style={{padding: '15px', background: 'var(--accent)', border: 'none', color: 'black', fontSize: '1.2rem', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.2s', letterSpacing: '1px'}}>SAVE LOGISTICS</button>
+                  {saveStatus && (
+                    <div style={{color: saveStatus.includes('ERROR') ? 'var(--texas-red)' : 'var(--accent)', fontWeight: 'bold'}} className="blackops">
+                      {saveStatus}
+                    </div>
+                  )}
+                </div>
              </form>
           </div>
 
