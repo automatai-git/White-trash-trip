@@ -1,0 +1,239 @@
+{
+  "nodes": [
+    {
+      "id": "texas_hero_skull_1776277104906_hero_image",
+      "label": "Texas Hero Skull Hero Image",
+      "file_type": "image",
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "texas_hero_skull_1776277104906_cyber_steer_mascot",
+      "label": "CYBER_STEER Mascot",
+      "file_type": "image",
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "texas_hero_skull_1776277104906_texas_longhorn_skull",
+      "label": "Texas Longhorn Skull",
+      "file_type": "image",
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "texas_hero_skull_1776277104906_neon_cyberpunk_aesthetic",
+      "label": "Neon Cyberpunk Aesthetic",
+      "file_type": "image",
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "texas_hero_skull_1776277104906_tx_lnrh_label",
+      "label": "TX//LNRH Text Label (Texas Longhorn)",
+      "file_type": "image",
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "texas_hero_skull_1776277104906_hud_overlay",
+      "label": "HUD / Game Interface Overlay",
+      "file_type": "image",
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "texas_hero_skull_1776277104906_star_emblem",
+      "label": "Star / Geometric Emblem on Skull Forehead",
+      "file_type": "image",
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "texas_hero_skull_1776277104906_aviator_sunglasses",
+      "label": "Neon Aviator Sunglasses",
+      "file_type": "image",
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "texas_hero_skull_1776277104906_smoke_effect",
+      "label": "Colorful Smoke Effect (Purple, Blue, Orange)",
+      "file_type": "image",
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "texas_hero_skull_1776277104906_white_trash_trip_project",
+      "label": "White Trash Trip Project",
+      "file_type": "image",
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "texas_hero_skull_1776277104906_hero_image",
+      "target": "texas_hero_skull_1776277104906_cyber_steer_mascot",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "texas_hero_skull_1776277104906_cyber_steer_mascot",
+      "target": "texas_hero_skull_1776277104906_texas_longhorn_skull",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "texas_hero_skull_1776277104906_cyber_steer_mascot",
+      "target": "texas_hero_skull_1776277104906_neon_cyberpunk_aesthetic",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "texas_hero_skull_1776277104906_tx_lnrh_label",
+      "target": "texas_hero_skull_1776277104906_texas_longhorn_skull",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "texas_hero_skull_1776277104906_texas_longhorn_skull",
+      "target": "texas_hero_skull_1776277104906_aviator_sunglasses",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "texas_hero_skull_1776277104906_texas_longhorn_skull",
+      "target": "texas_hero_skull_1776277104906_star_emblem",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "texas_hero_skull_1776277104906_hero_image",
+      "target": "texas_hero_skull_1776277104906_hud_overlay",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "texas_hero_skull_1776277104906_hero_image",
+      "target": "texas_hero_skull_1776277104906_smoke_effect",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "texas_hero_skull_1776277104906_hud_overlay",
+      "target": "texas_hero_skull_1776277104906_neon_cyberpunk_aesthetic",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "texas_hero_skull_1776277104906_hero_image",
+      "target": "texas_hero_skull_1776277104906_white_trash_trip_project",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "texas_hero_skull_1776277104906_star_emblem",
+      "target": "texas_hero_skull_1776277104906_white_trash_trip_project",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "texas_hero_skull_1776277104906_cyber_steer_mascot",
+      "target": "texas_hero_skull_1776277104906_white_trash_trip_project",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/assets/texas_hero_skull_1776277104906.png",
+      "source_location": null,
+      "weight": 0.8
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 1821,
+  "output_tokens": 512
+}

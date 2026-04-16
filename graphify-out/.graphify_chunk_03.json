@@ -1,0 +1,228 @@
+{
+  "nodes": [
+    {
+      "id": "heli_hogs_action_1776277120235_photograph",
+      "label": "Heli Hogs Action Photograph",
+      "file_type": "image",
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "heli_hogs_action_1776277120235_uh1_huey",
+      "label": "UH-1 Huey Helicopter",
+      "file_type": "image",
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "heli_hogs_action_1776277120235_texas_army_national_guard",
+      "label": "Texas Army National Guard",
+      "file_type": "image",
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "heli_hogs_action_1776277120235_heli_hog_hunting",
+      "label": "Helicopter Hog Hunting Operation",
+      "file_type": "image",
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "heli_hogs_action_1776277120235_texas_hill_country",
+      "label": "Texas Hill Country Terrain",
+      "file_type": "image",
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "heli_hogs_action_1776277120235_sunset",
+      "label": "Dramatic Sunset Sky",
+      "file_type": "image",
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "heli_hogs_action_1776277120235_low_level_flight",
+      "label": "Low-Level Nap-of-Earth Flight",
+      "file_type": "image",
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "heli_hogs_action_1776277120235_dust_cloud",
+      "label": "Rotor Wash Dust Cloud",
+      "file_type": "image",
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "heli_hogs_action_1776277120235_feral_hog_control",
+      "label": "Feral Hog Population Control",
+      "file_type": "image",
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "heli_hogs_action_1776277120235_photograph",
+      "target": "heli_hogs_action_1776277120235_uh1_huey",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "heli_hogs_action_1776277120235_uh1_huey",
+      "target": "heli_hogs_action_1776277120235_texas_army_national_guard",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "heli_hogs_action_1776277120235_uh1_huey",
+      "target": "heli_hogs_action_1776277120235_low_level_flight",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "heli_hogs_action_1776277120235_uh1_huey",
+      "target": "heli_hogs_action_1776277120235_dust_cloud",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "heli_hogs_action_1776277120235_photograph",
+      "target": "heli_hogs_action_1776277120235_texas_hill_country",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "heli_hogs_action_1776277120235_photograph",
+      "target": "heli_hogs_action_1776277120235_sunset",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "heli_hogs_action_1776277120235_heli_hog_hunting",
+      "target": "heli_hogs_action_1776277120235_uh1_huey",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "heli_hogs_action_1776277120235_heli_hog_hunting",
+      "target": "heli_hogs_action_1776277120235_texas_army_national_guard",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "heli_hogs_action_1776277120235_heli_hog_hunting",
+      "target": "heli_hogs_action_1776277120235_feral_hog_control",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "heli_hogs_action_1776277120235_heli_hog_hunting",
+      "target": "heli_hogs_action_1776277120235_texas_hill_country",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "heli_hogs_action_1776277120235_low_level_flight",
+      "target": "heli_hogs_action_1776277120235_texas_hill_country",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "heli_hogs_action_1776277120235_texas_army_national_guard",
+      "target": "heli_hogs_action_1776277120235_feral_hog_control",
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.3,
+      "source_file": "src/assets/heli_hogs_action_1776277120235.png",
+      "source_location": null,
+      "weight": 0.3
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 1024,
+  "output_tokens": 512
+}

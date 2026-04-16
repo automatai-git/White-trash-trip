@@ -1,0 +1,311 @@
+{
+  "nodes": [
+    {
+      "id": "convoy_suvs_1776277619429_image",
+      "label": "SUV Convoy on Desert Highway at Sunset",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "convoy_suvs_1776277619429_convoy",
+      "label": "Three-Vehicle SUV Convoy",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "convoy_suvs_1776277619429_lead_suv",
+      "label": "Lead Cadillac Escalade (Matte Black, Roof Rack)",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "convoy_suvs_1776277619429_following_suvs",
+      "label": "Following SUVs with Headlights On",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "convoy_suvs_1776277619429_desert_highway",
+      "label": "Desert Highway (Two-Lane Road)",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "convoy_suvs_1776277619429_sunset",
+      "label": "Desert Sunset Sky (Orange/Purple)",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "convoy_suvs_1776277619429_wind_turbines",
+      "label": "Wind Turbines on Horizon",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "convoy_suvs_1776277619429_joshua_trees",
+      "label": "Joshua Trees (Roadside Vegetation)",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "convoy_suvs_1776277619429_mountains",
+      "label": "Mountain Range in Background",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "convoy_suvs_1776277619429_dust_cloud",
+      "label": "Dust Cloud Behind Convoy",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "convoy_suvs_1776277619429_mojave_desert",
+      "label": "Mojave/Southwestern US Desert Setting",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "convoy_suvs_1776277619429_road_trip",
+      "label": "Road Trip / Convoy Journey Theme",
+      "file_type": "image",
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "convoy_suvs_1776277619429_image",
+      "target": "convoy_suvs_1776277619429_convoy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "convoy_suvs_1776277619429_convoy",
+      "target": "convoy_suvs_1776277619429_lead_suv",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "convoy_suvs_1776277619429_convoy",
+      "target": "convoy_suvs_1776277619429_following_suvs",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "convoy_suvs_1776277619429_convoy",
+      "target": "convoy_suvs_1776277619429_desert_highway",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "convoy_suvs_1776277619429_convoy",
+      "target": "convoy_suvs_1776277619429_dust_cloud",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "convoy_suvs_1776277619429_desert_highway",
+      "target": "convoy_suvs_1776277619429_sunset",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "convoy_suvs_1776277619429_desert_highway",
+      "target": "convoy_suvs_1776277619429_mojave_desert",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "convoy_suvs_1776277619429_joshua_trees",
+      "target": "convoy_suvs_1776277619429_mojave_desert",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "convoy_suvs_1776277619429_wind_turbines",
+      "target": "convoy_suvs_1776277619429_mojave_desert",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "convoy_suvs_1776277619429_mountains",
+      "target": "convoy_suvs_1776277619429_mojave_desert",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "convoy_suvs_1776277619429_lead_suv",
+      "target": "convoy_suvs_1776277619429_following_suvs",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "convoy_suvs_1776277619429_convoy",
+      "target": "convoy_suvs_1776277619429_road_trip",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "convoy_suvs_1776277619429_image",
+      "target": "convoy_suvs_1776277619429_road_trip",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "convoy_suvs_1776277619429_image",
+      "target": "convoy_suvs_1776277619429_sunset",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "convoy_suvs_1776277619429_image",
+      "target": "convoy_suvs_1776277619429_wind_turbines",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "convoy_suvs_1776277619429_image",
+      "target": "convoy_suvs_1776277619429_joshua_trees",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "convoy_suvs_1776277619429_image",
+      "target": "convoy_suvs_1776277619429_mountains",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/convoy_suvs_1776277619429.png",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 1024,
+  "output_tokens": 512
+}

@@ -1,0 +1,259 @@
+{
+  "nodes": [
+    {
+      "id": "pbr_bull_riding_1776277637131_event",
+      "label": "PBR Bull Riding Event",
+      "file_type": "image",
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pbr_bull_riding_1776277637131_bull_rider",
+      "label": "Bull Rider (Competitor)",
+      "file_type": "image",
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pbr_bull_riding_1776277637131_bull",
+      "label": "Bucking Bull",
+      "file_type": "image",
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pbr_bull_riding_1776277637131_pbr_org",
+      "label": "PBR (Professional Bull Riders Organization)",
+      "file_type": "image",
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pbr_bull_riding_1776277637131_arena",
+      "label": "Rodeo Arena",
+      "file_type": "image",
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pbr_bull_riding_1776277637131_monster_energy",
+      "label": "Monster Energy (Sponsor)",
+      "file_type": "image",
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pbr_bull_riding_1776277637131_red_bull",
+      "label": "Red Bull (Sponsor)",
+      "file_type": "image",
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pbr_bull_riding_1776277637131_audience",
+      "label": "Live Audience / Crowd",
+      "file_type": "image",
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pbr_bull_riding_1776277637131_rodeo_sport",
+      "label": "Rodeo Sport / Bull Riding",
+      "file_type": "image",
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pbr_bull_riding_1776277637131_western_culture",
+      "label": "American Western / Country Culture",
+      "file_type": "image",
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "pbr_bull_riding_1776277637131_bull_rider",
+      "target": "pbr_bull_riding_1776277637131_bull",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_event",
+      "target": "pbr_bull_riding_1776277637131_pbr_org",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_event",
+      "target": "pbr_bull_riding_1776277637131_arena",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_event",
+      "target": "pbr_bull_riding_1776277637131_monster_energy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_event",
+      "target": "pbr_bull_riding_1776277637131_red_bull",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_event",
+      "target": "pbr_bull_riding_1776277637131_audience",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_event",
+      "target": "pbr_bull_riding_1776277637131_bull_rider",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_event",
+      "target": "pbr_bull_riding_1776277637131_rodeo_sport",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_rodeo_sport",
+      "target": "pbr_bull_riding_1776277637131_western_culture",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_pbr_org",
+      "target": "pbr_bull_riding_1776277637131_rodeo_sport",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_monster_energy",
+      "target": "pbr_bull_riding_1776277637131_pbr_org",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_red_bull",
+      "target": "pbr_bull_riding_1776277637131_pbr_org",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_bull_rider",
+      "target": "pbr_bull_riding_1776277637131_western_culture",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "pbr_bull_riding_1776277637131_audience",
+      "target": "pbr_bull_riding_1776277637131_arena",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/assets/pbr_bull_riding_1776277637131.png",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 1024,
+  "output_tokens": 512
+}
