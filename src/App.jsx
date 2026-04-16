@@ -91,8 +91,8 @@ function App() {
 
         {activeTab === 'logistics' && (
           <div className="animate-slide">
-            <PreFlight />
             <Participation playerName={activePlayer} />
+            <PreFlight />
           </div>
         )}
 

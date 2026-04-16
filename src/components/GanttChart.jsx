@@ -14,7 +14,10 @@ const DATES = [
 const GanttChart = ({ participants }) => {
   const isPresent = (arr, dep, current) => {
     if (!arr || !dep) return false;
-    return current >= arr && current <= dep;
+    // Strip timestamps if Supabase returned them:
+    const a = arr.substring(0, 10);
+    const d = dep.substring(0, 10);
+    return current >= a && current <= d;
   };
 
   return (
@@ -31,8 +34,9 @@ const GanttChart = ({ participants }) => {
       <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
         {participants.map((p) => (
           <div key={p.id} style={{display: 'flex', alignItems: 'center', background: 'rgba(255,255,255,0.02)', borderRadius: '6px', padding: '10px 0', border: '1px solid rgba(255,255,255,0.02)'}}>
-            <div style={{width: '150px', flexShrink: 0, fontSize: '1rem', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 15px', borderRight: '1px solid rgba(255,255,255,0.05)'}}>
-              {p.player_name}
+            <div style={{width: '150px', flexShrink: 0, fontSize: '1rem', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 15px', borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column'}}>
+              <span>{p.player_name}</span>
+              <span style={{fontSize: '0.65rem', color: 'var(--text-muted)'}}>{p.arrival_date?.substring(0,10)} / {p.departure_date?.substring(0,10)}</span>
             </div>
             <div style={{display: 'flex', flex: 1, position: 'relative', height: '24px'}}>
               {DATES.map((d, index) => {
