@@ -13,11 +13,11 @@ const PreFlight = () => {
   };
 
   return (
-    <div style={{margin: '80px 0', background: 'var(--bg-card)', padding: '40px', borderRadius: '16px', border: '1px solid var(--texas-red)', position: 'relative', overflow: 'hidden'}}>
-      <div style={{position: 'absolute', top: 0, right: 0, opacity: 0.05, fontSize: '15rem', lineHeight: 0.8, pointerEvents: 'none'}} className="blackops">⚠️</div>
+    <div style={{margin: 'clamp(40px, 10vw, 80px) 0', background: 'var(--bg-card)', padding: 'clamp(20px, 5vw, 40px)', borderRadius: '16px', border: '1px solid var(--texas-red)', position: 'relative', overflow: 'hidden'}}>
+      <div style={{position: 'absolute', top: 0, right: 0, opacity: 0.05, fontSize: 'clamp(8rem, 20vw, 15rem)', lineHeight: 0.8, pointerEvents: 'none'}} className="blackops">⚠️</div>
       
-      <h2 className="blackops" style={{fontSize: '2.5rem', marginBottom: '10px', color: 'var(--texas-red)', letterSpacing: '2px'}}>PRE-FLIGHT PREP</h2>
-      <p style={{color: 'var(--text-muted)', marginBottom: '30px', fontSize: '1.2rem'}}>Before you step on that plane, make sure you've handled the essentials.</p>
+      <h2 className="blackops" style={{fontSize: 'clamp(2rem, 6vw, 2.5rem)', marginBottom: '10px', color: 'var(--texas-red)', letterSpacing: '2px'}}>PRE-FLIGHT PREP</h2>
+      <p style={{color: 'var(--text-muted)', marginBottom: '30px', fontSize: 'clamp(1rem, 3vw, 1.2rem)'}}>Before you step on that plane, make sure you've handled the essentials.</p>
 
       <div style={{display: 'flex', flexDirection: 'column', gap: '15px'}}>
         {PRE_FLIGHT_CHECKLIST.map((item, idx) => {

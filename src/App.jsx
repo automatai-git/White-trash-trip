@@ -42,12 +42,7 @@ function App() {
           <div className="stat-box">
             <MapPin size={36} color="var(--accent)" style={{margin:'0 auto 15px'}} />
             <div className="stat-value">Fort Worth</div>
-            <div className="stat-label">Location (Basecamp)</div>
-          </div>
-          <div className="stat-box">
-            <Users size={36} color="var(--accent)" style={{margin:'0 auto 15px'}} />
-            <div className="stat-value">{TRIP_META.group}</div>
-            <div className="stat-label">Squad</div>
+            <div className="stat-label">Location</div>
           </div>
           <div className="stat-box">
             <Flame size={36} color="var(--texas-red)" style={{margin:'0 auto 15px'}} />

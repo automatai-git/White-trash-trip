@@ -316,8 +316,35 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+  .hero-subtitle {
+    font-size: clamp(1rem, 4.5vw, 1.5rem);
+    letter-spacing: 2px;
+  }
+  .hero-badge {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    letter-spacing: 2px;
+  }
   .event-visual-card {
-    min-height: 280px;
-    padding: 25px;
+    min-height: 250px;
+    padding: 20px;
+  }
+  .event-desc {
+    font-size: 0.95rem;
+  }
+  .stat-box {
+    padding: 15px;
+  }
+  .day-card {
+    margin-bottom: 50px;
+  }
+  .day-theme {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  .checklist-grid {
+    grid-template-columns: 1fr;
   }
 }

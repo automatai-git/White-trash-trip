@@ -91,11 +91,11 @@ const Scoreboard = () => {
   };
 
   return (
-    <div style={{margin: '80px 0', border: '1px solid var(--border-light)', borderRadius: '16px', padding: '40px', background: 'rgba(0,0,0,0.4)', boxShadow: '0 20px 50px rgba(0,0,0,0.5)'}}>
-      <h2 className="blackops" style={{fontSize: '3rem', marginBottom: '20px', textAlign: 'center', letterSpacing: '4px', color: 'var(--accent)'}}>
+    <div style={{margin: 'clamp(40px, 10vw, 80px) 0', border: '1px solid var(--border-light)', borderRadius: '16px', padding: 'clamp(20px, 5vw, 40px)', background: 'rgba(0,0,0,0.4)', boxShadow: '0 20px 50px rgba(0,0,0,0.5)'}}>
+      <h2 className="blackops" style={{fontSize: 'clamp(2rem, 6vw, 3rem)', marginBottom: '20px', textAlign: 'center', letterSpacing: 'clamp(2px, 1vw, 4px)', color: 'var(--accent)'}}>
         SQUAD SCOREBOARD
       </h2>
-      <p style={{textAlign: 'center', color: 'var(--text-muted)', marginBottom: '40px', fontSize: '1.2rem'}}>Complete the ultimate Texas bucket list. Enter the arena to track your legacy.</p>
+      <p style={{textAlign: 'center', color: 'var(--text-muted)', marginBottom: '40px', fontSize: 'clamp(1rem, 3vw, 1.2rem)'}}>Complete the ultimate Texas bucket list. Enter the arena to track your legacy.</p>
 
       {!hasJoined ? (
         <div style={{maxWidth: '400px', margin: '0 auto', textAlign: 'center'}}>
