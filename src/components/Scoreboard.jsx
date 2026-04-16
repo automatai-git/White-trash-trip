@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabase';
 import { CHECKLIST } from '../data/travelData';
 
-const Scoreboard = () => {
-  const [playerName, setPlayerName] = useState('');
-  const [hasJoined, setHasJoined] = useState(false);
+const Scoreboard = ({ playerName }) => {
   const [playerData, setPlayerData] = useState(null);
   const [scoreboard, setScoreboard] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,17 +11,13 @@ const Scoreboard = () => {
   const [proposals, setProposals] = useState([]);
   const [newProposalText, setNewProposalText] = useState('');
 
-  // Load user from local storage logic (simple honor system persistence)
+  // Load user info
   useEffect(() => {
     fetchProposals();
-    const savedName = localStorage.getItem('redneckPlayerName');
-    if (savedName) {
-      setPlayerName(savedName);
-      checkAndCreateUser(savedName);
-    } else {
-      fetchScoreboard();
+    if (playerName) {
+      checkAndCreateUser(playerName);
     }
-  }, []);
+  }, [playerName]);
 
   const fetchProposals = async () => {
     const { data: propsData, error } = await supabase
@@ -77,15 +71,7 @@ const Scoreboard = () => {
       setPlayerData(data);
     }
     
-    setHasJoined(true);
     fetchScoreboard();
-  };
-
-  const joinSquad = (e) => {
-    e.preventDefault();
-    if (!playerName.trim()) return;
-    localStorage.setItem('redneckPlayerName', playerName.trim());
-    checkAndCreateUser(playerName.trim());
   };
 
   const toggleChecklist = async (item) => {
@@ -146,33 +132,6 @@ const Scoreboard = () => {
       </h2>
       <p style={{textAlign: 'center', color: 'var(--text-muted)', marginBottom: '40px', fontSize: 'clamp(1rem, 3vw, 1.2rem)'}}>Complete the ultimate Texas bucket list. Enter the arena to track your legacy.</p>
 
-      {!hasJoined ? (
-        <div style={{maxWidth: '400px', margin: '0 auto', textAlign: 'center'}}>
-          <form onSubmit={joinSquad}>
-            <input 
-              type="text" 
-              placeholder="ENTER YOUR NAME" 
-              value={playerName}
-              onChange={(e) => setPlayerName(e.target.value)}
-              style={{
-                width: '100%', padding: '15px 20px', background: 'var(--bg-card)', border: '2px solid var(--border-light)', 
-                color: 'white', fontSize: '1.2rem', borderRadius: '8px', marginBottom: '20px', textAlign: 'center', fontFamily: 'Outfit'
-              }}
-              required
-            />
-            <button 
-              type="submit" 
-              className="blackops"
-              style={{
-                width: '100%', padding: '15px', background: 'var(--texas-red)', border: 'none', color: 'white', 
-                fontSize: '1.5rem', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.2s', letterSpacing: '2px'
-              }}
-            >
-              JOIN THE SQUAD
-            </button>
-          </form>
-        </div>
-      ) : (
         <div style={{display: 'flex', gap: '40px', flexWrap: 'wrap'}}>
           {/* Active Player Checklist */}
           <div style={{flex: '1 1 400px'}}>
@@ -290,7 +249,6 @@ const Scoreboard = () => {
             </div>
           </div>
         </div>
-      )}
     </div>
   );
 };

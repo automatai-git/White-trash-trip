@@ -3,15 +3,22 @@ import { TRIP_META, ITINERARY } from './data/travelData';
 import { MapPin, CalendarDays, Users, Flame } from 'lucide-react';
 import PreFlight from './components/PreFlight';
 import Scoreboard from './components/Scoreboard';
+import UserGate from './components/UserGate';
+import Participation from './components/Participation';
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
+  const [activePlayer, setActivePlayer] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => requestAnimationFrame(() => setScrollY(window.scrollY));
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  if (!activePlayer) {
+    return <UserGate onLogin={setActivePlayer} />;
+  }
 
   return (
     <>
@@ -52,6 +59,7 @@ function App() {
         </div>
 
         <PreFlight />
+        <Participation playerName={activePlayer} />
 
         <div style={{margin: '100px 0'}}>
           {ITINERARY.map((day, idx) => (
@@ -87,7 +95,7 @@ function App() {
           ))}
         </div>
 
-        <Scoreboard />
+        <Scoreboard playerName={activePlayer} />
 
       </main>
       
