@@ -9,7 +9,9 @@ const Scoreboard = ({ playerName }) => {
   
   const [activeChecklist, setActiveChecklist] = useState(CHECKLIST);
   const [proposals, setProposals] = useState([]);
+  const [history, setHistory] = useState([]);
   const [newProposalText, setNewProposalText] = useState('');
+  const [showHistory, setShowHistory] = useState(false);
 
   // Load user info
   useEffect(() => {
@@ -23,13 +25,17 @@ const Scoreboard = ({ playerName }) => {
     const { data: propsData, error } = await supabase
       .from('checklist_proposals')
       .select('*')
-      .order('created_at', { ascending: true });
+      .order('created_at', { ascending: false });
     
     if (!error && propsData) {
       const enacted = propsData.filter(p => p.enacted).map(p => p.proposal_text);
       setActiveChecklist([...CHECKLIST, ...enacted]);
-      const pending = propsData.filter(p => !p.enacted);
+      
+      const pending = propsData.filter(p => !p.enacted && !p.rejected);
       setProposals(pending);
+
+      const historical = propsData.filter(p => p.enacted || p.rejected);
+      setHistory(historical);
     }
   };
 
@@ -104,22 +110,39 @@ const Scoreboard = ({ playerName }) => {
       .insert([{ 
         proposal_text: newProposalText.trim(), 
         proposed_by: playerName,
-        voters: [playerName]
+        voters_for: [playerName],
+        voters_against: []
       }]);
     
     setNewProposalText('');
     fetchProposals();
   };
 
-  const handleVote = async (proposal) => {
-    if (!playerName || proposal.voters.includes(playerName)) return;
+  const handleVote = async (proposal, type) => {
+    if (!playerName) return;
     
-    const newVoters = [...proposal.voters, playerName];
-    const isEnacted = newVoters.length >= 5;
+    // Check if already voted in either direction
+    const combinedVoters = [...(proposal.voters_for || []), ...(proposal.voters_against || [])];
+    if (combinedVoters.includes(playerName)) return;
+    
+    let updateData = {};
+    if (type === 'for') {
+      const newVoters = [...(proposal.voters_for || []), playerName];
+      updateData = { 
+        voters_for: newVoters, 
+        enacted: newVoters.length >= 5 
+      };
+    } else {
+      const newVoters = [...(proposal.voters_against || []), playerName];
+      updateData = { 
+        voters_against: newVoters, 
+        rejected: newVoters.length >= 3 
+      };
+    }
     
     await supabase
       .from('checklist_proposals')
-      .update({ voters: newVoters, enacted: isEnacted })
+      .update(updateData)
       .eq('id', proposal.id);
       
     fetchProposals();
@@ -219,7 +242,10 @@ const Scoreboard = ({ playerName }) => {
                 <p style={{color: 'var(--text-muted)', textAlign: 'center'}}>No pending proposals. Suggest something stupid.</p>
               ) : (
                 proposals.map(p => {
-                  const hasVoted = p.voters.includes(playerName);
+                  const hasVotedFor = p.voters_for?.includes(playerName);
+                  const hasVotedAgainst = p.voters_against?.includes(playerName);
+                  const hasVoted = hasVotedFor || hasVotedAgainst;
+                  
                   return (
                     <div key={p.id} style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.05)', padding: '15px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', flexWrap: 'wrap', gap: '15px'}}>
                       <div style={{flex: '1 1 200px'}}>
@@ -227,26 +253,72 @@ const Scoreboard = ({ playerName }) => {
                         <div style={{fontSize: '0.9rem', color: 'var(--text-muted)'}}>Proposed by {p.proposed_by}</div>
                       </div>
                       <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
-                        <div className="blackops" style={{fontSize: '1.5rem', color: 'var(--texas-red)'}}>
-                          {p.voters.length} <span style={{fontSize: '1rem', color: 'var(--text-muted)'}}>/ 5</span>
+                        <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+                            <div className="blackops" style={{fontSize: '1.5rem', color: 'var(--accent)'}}>
+                            {p.voters_for?.length || 0} <span style={{fontSize: '1rem', color: 'var(--text-muted)'}}>/ 5</span>
+                            </div>
+                            <button 
+                            onClick={() => handleVote(p, 'for')}
+                            disabled={hasVoted}
+                            className="blackops"
+                            style={{
+                                padding: '8px 15px', background: hasVotedFor ? 'var(--accent)' : 'transparent', border: hasVotedFor ? 'none' : '1px solid var(--accent)', 
+                                color: hasVotedFor ? 'black' : 'var(--accent)', fontSize: '0.9rem', borderRadius: '6px', cursor: hasVoted ? 'not-allowed' : 'pointer', transition: 'all 0.2s'
+                            }}
+                            >
+                            ENACT
+                            </button>
                         </div>
-                        <button 
-                          onClick={() => handleVote(p)}
-                          disabled={hasVoted}
-                          className="blackops"
-                          style={{
-                            padding: '10px 20px', background: hasVoted ? 'transparent' : 'var(--texas-red)', border: hasVoted ? '1px solid var(--text-muted)' : 'none', 
-                            color: hasVoted ? 'var(--text-muted)' : 'white', fontSize: '1rem', borderRadius: '6px', cursor: hasVoted ? 'not-allowed' : 'pointer', transition: 'all 0.2s'
-                          }}
-                        >
-                          {hasVoted ? 'VOTED' : 'VOTE'}
-                        </button>
+
+                        <div style={{display: 'flex', alignItems: 'center', gap: '8px', borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '20px'}}>
+                            <div className="blackops" style={{fontSize: '1.5rem', color: 'var(--texas-red)'}}>
+                            {p.voters_against?.length || 0} <span style={{fontSize: '1rem', color: 'var(--text-muted)'}}>/ 3</span>
+                            </div>
+                            <button 
+                            onClick={() => handleVote(p, 'against')}
+                            disabled={hasVoted}
+                            className="blackops"
+                            style={{
+                                padding: '8px 15px', background: hasVotedAgainst ? 'var(--texas-red)' : 'transparent', border: hasVotedAgainst ? 'none' : '1px solid var(--texas-red)', 
+                                color: hasVotedAgainst ? 'white' : 'var(--texas-red)', fontSize: '0.9rem', borderRadius: '6px', cursor: hasVoted ? 'not-allowed' : 'pointer', transition: 'all 0.2s'
+                            }}
+                            >
+                            REJECT
+                            </button>
+                        </div>
                       </div>
                     </div>
                   );
                 })
               )}
             </div>
+
+            {history.length > 0 && (
+                <div style={{marginTop: '40px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '20px'}}>
+                    <button 
+                        onClick={() => setShowHistory(!showHistory)}
+                        style={{background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '5px', margin: '0 auto'}}
+                    >
+                        {showHistory ? 'HIDE' : 'SHOW'} VOTING HISTORY ({history.length})
+                    </button>
+
+                    {showHistory && (
+                        <div style={{display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '20px'}}>
+                            {history.map(p => (
+                                <div key={p.id} style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.02)', padding: '12px 20px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)'}}>
+                                    <div>
+                                        <div style={{fontWeight: 600, color: 'rgba(255,255,255,0.6)'}}>{p.proposal_text}</div>
+                                        <div style={{fontSize: '0.8rem', color: 'var(--text-muted)'}}>Proposed by {p.proposed_by}</div>
+                                    </div>
+                                    <div className="blackops" style={{color: p.enacted ? 'var(--accent)' : 'var(--texas-red)', fontSize: '1.1rem'}}>
+                                        {p.enacted ? 'ENACTED' : 'REJECTED'}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            )}
           </div>
         </div>
     </div>

@@ -3,8 +3,10 @@ CREATE TABLE checklist_proposals (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     proposal_text TEXT NOT NULL,
     proposed_by TEXT NOT NULL,
-    voters TEXT[] DEFAULT '{}',
+    voters_for TEXT[] DEFAULT '{}',
+    voters_against TEXT[] DEFAULT '{}',
     enacted BOOLEAN DEFAULT false,
+    rejected BOOLEAN DEFAULT false,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
