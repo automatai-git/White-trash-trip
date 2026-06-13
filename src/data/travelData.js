@@ -1,4 +1,4 @@
-import heroImg from '../assets/texas_hero_skull_1776277104906.png';
+import heroImg from '../assets/texas_hero_dusk.png';
 import heliImg from '../assets/heli_hogs_action_1776277120235.png';
 import bbqImg from '../assets/texas_bbq_brisket_1776277135312.png';
 import suvsImg from '../assets/convoy_suvs_1776277619429.png';
@@ -7,10 +7,12 @@ import pbrImg from '../assets/pbr_bull_riding_1776277637131.png';
 export const TRIP_META = {
   title: "THE ULTIMATE TEXAS REDNECK WEEK",
   subtitle: "Helicopters • Hogs • Machine Guns • Topgolf • Rodeo • Grand Ole Opry",
+  highlights: ["Helicopters", "Hogs", "Machine Guns", "Topgolf", "Rodeo", "Grand Ole Opry"],
   dates: "June 16-21, 2026",
   location: "Fort Worth ➡️ Nashville",
   group: "10-12 Men | Ages ~30",
-  weather: "33-37°C (91-99°F) — Hot, humid, and merciless.",
+  weather: "91–99°F",
+  weatherNote: "Hot · humid · merciless",
   basecamp: "Fort Worth Stockyards & Nashville Broadway.",
   heroImage: heroImg
 };
@@ -43,19 +45,18 @@ export const ITINERARY = [
         time: "6:00 PM",
         title: "Check-In & Supplies",
         description: "Check into the Stockyards basecamp. Massive grocery run for beer, steaks, and charcoal for the barbeque.",
-        image: heroImg
+        image: suvsImg
       },
       {
         time: "Evening",
         title: "Topgolf",
-        description: "Climate-controlled bays, giant targets, and pitchers of beer. The first wagers of the week get settled here.",
-        image: bbqImg
+        description: "Climate-controlled bays, giant targets, and pitchers of beer. The first wagers of the week get settled here."
       },
       {
         time: "Night",
         title: "Easy Evening at Basecamp",
         description: "Beers on the porch and a strategy briefing. Rest up — the week ahead shows no mercy.",
-        image: pbrImg
+        image: heroImg
       }
     ]
   },
@@ -70,8 +71,7 @@ export const ITINERARY = [
       {
         time: "Daytime",
         title: "Texas Gun Experience",
-        description: "Indoor range with a massive full-auto selection. Spray and pray.",
-        image: heliImg
+        description: "Indoor range with a massive full-auto selection. Spray and pray."
       },
       {
         time: "Late Afternoon",
@@ -89,7 +89,7 @@ export const ITINERARY = [
         time: "Night",
         title: "Billy Bob's Texas",
         description: "The world's largest honky tonk. 120,000 sq ft of country chaos. Live music and indoor bull riding.",
-        image: heroImg
+        image: pbrImg
       }
     ]
   },
@@ -99,7 +99,7 @@ export const ITINERARY = [
     date: "Thursday, June 18",
     theme: "HOGS FROM HEAVEN",
     headline: "Heli Hog Strike Team + Shopping, Topgolf Rematch",
-    color: "#999999",
+    color: "#5b8def",
     events: [
       {
         time: "Early Morning",
@@ -116,8 +116,7 @@ export const ITINERARY = [
       {
         time: "Evening",
         title: "Topgolf: The Rematch",
-        description: "The squad reunites to settle the Day 1 scores. Losers buy the pitchers.",
-        image: suvsImg
+        description: "The squad reunites to settle the Day 1 scores. Losers buy the pitchers."
       }
     ]
   },
@@ -133,7 +132,7 @@ export const ITINERARY = [
         time: "Morning",
         title: "The Group Split",
         description: "The squad divides 50/50. Half saddle up for Music City, half hold down Fort Worth.",
-        image: heroImg
+        image: suvsImg
       },
       {
         time: "All Day",
@@ -160,14 +159,12 @@ export const ITINERARY = [
       {
         time: "Daytime",
         title: "Music City",
-        description: "Boots on Lower Broadway. Bars, hot chicken, and a warm-up lap before the main event.",
-        image: suvsImg
+        description: "Boots on Lower Broadway. Bars, hot chicken, and a warm-up lap before the main event."
       },
       {
         time: "9:00 PM",
         title: "Grand Ole Opry (Opry 100)",
-        description: "The 100th-anniversary celebration in Nashville. Country music's biggest stage.",
-        image: pbrImg
+        description: "The 100th-anniversary celebration in Nashville. Country music's biggest stage."
       },
       {
         time: "Late Night",
@@ -183,7 +180,7 @@ export const ITINERARY = [
     date: "Sunday, June 21",
     theme: "The Final Flight",
     headline: "Nashville to New York",
-    color: "#111111",
+    color: "#ffb800",
     events: [
       {
         time: "Morning",

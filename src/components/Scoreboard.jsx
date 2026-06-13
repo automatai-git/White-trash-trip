@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabase';
 import { CHECKLIST } from '../data/travelData';
 
+const VOTES_TO_ENACT = 5;
+const VOTES_TO_VETO = 3;
+
 const Scoreboard = ({ playerName }) => {
   const [playerData, setPlayerData] = useState(null);
   const [scoreboard, setScoreboard] = useState([]);
@@ -128,15 +131,15 @@ const Scoreboard = ({ playerName }) => {
     let updateData = {};
     if (type === 'for') {
       const newVoters = [...(proposal.voters_for || []), playerName];
-      updateData = { 
-        voters_for: newVoters, 
-        enacted: newVoters.length >= 5 
+      updateData = {
+        voters_for: newVoters,
+        enacted: newVoters.length >= VOTES_TO_ENACT
       };
     } else {
       const newVoters = [...(proposal.voters_against || []), playerName];
-      updateData = { 
-        voters_against: newVoters, 
-        rejected: newVoters.length >= 3 
+      updateData = {
+        voters_against: newVoters,
+        rejected: newVoters.length >= VOTES_TO_VETO
       };
     }
     
@@ -148,6 +151,10 @@ const Scoreboard = ({ playerName }) => {
     fetchProposals();
   };
 
+  const done = playerData?.completed_items?.length || 0;
+  const total = activeChecklist.length;
+  const pct = total ? Math.round((done / total) * 100) : 0;
+
   return (
     <div style={{margin: 'clamp(40px, 10vw, 80px) 0', border: '1px solid var(--border-light)', borderRadius: '16px', padding: 'clamp(20px, 5vw, 40px)', background: 'rgba(0,0,0,0.4)', boxShadow: '0 20px 50px rgba(0,0,0,0.5)'}}>
       <h2 className="blackops" style={{fontSize: 'clamp(2rem, 6vw, 3rem)', marginBottom: '20px', textAlign: 'center', letterSpacing: 'clamp(2px, 1vw, 4px)', color: 'var(--accent)'}}>
@@ -158,14 +165,33 @@ const Scoreboard = ({ playerName }) => {
         <div style={{display: 'flex', gap: '40px', flexWrap: 'wrap'}}>
           {/* Active Player Checklist */}
           <div style={{flex: '1 1 400px'}}>
+            <div style={{marginBottom: '20px'}}>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '10px'}}>
+                <span className="blackops" style={{color: 'white', fontSize: '1.1rem', letterSpacing: '1px'}}>YOUR PROGRESS</span>
+                <span className="blackops" style={{color: 'var(--accent)', fontSize: '1.1rem'}}>{done}/{total} · {pct}%</span>
+              </div>
+              <div style={{width: '100%', height: '14px', background: 'rgba(255,255,255,0.06)', borderRadius: '999px', overflow: 'hidden'}}>
+                <div style={{width: pct + '%', height: '100%', background: 'linear-gradient(90deg, var(--accent), var(--texas-red))', borderRadius: '999px', transition: 'width 0.4s ease'}} />
+              </div>
+              {pct === 100 && (
+                <div className="blackops" style={{color: 'var(--accent)', marginTop: '10px', fontSize: '0.95rem', letterSpacing: '1px'}}>
+                  🏆 LEGEND STATUS — every box checked
+                </div>
+              )}
+            </div>
             <h3 className="blackops" style={{fontSize: '1.8rem', color: 'white', marginBottom: '20px'}}>YOUR CHECKLIST</h3>
             <div style={{display: 'flex', flexDirection: 'column', gap: '15px'}}>
               {activeChecklist.map((item, idx) => {
                 const isChecked = playerData?.completed_items?.includes(item);
                 return (
-                  <div 
-                    key={idx} 
+                  <div
+                    key={idx}
                     onClick={() => toggleChecklist(item)}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleChecklist(item); } }}
+                    role="button"
+                    tabIndex={0}
+                    aria-pressed={isChecked}
+                    className="focus-ring"
                     style={{
                       display: 'flex', alignItems: 'center', gap: '15px',
                       background: isChecked ? 'rgba(255, 184, 0, 0.15)' : 'rgba(255,255,255,0.03)',
@@ -211,8 +237,11 @@ const Scoreboard = ({ playerName }) => {
           
           {/* Proposals Section */}
           <div style={{flex: '1 1 100%', marginTop: '20px', background: 'var(--bg-card)', padding: '30px', borderRadius: '12px', border: '1px solid var(--border-light)'}}>
-            <h3 className="blackops" style={{fontSize: '1.8rem', color: 'var(--texas-red)', marginBottom: '20px', textAlign: 'center'}}>PROPOSE ADDITION</h3>
-            
+            <h3 className="blackops" style={{fontSize: '1.8rem', color: 'var(--texas-red)', marginBottom: '8px', textAlign: 'center'}}>PROPOSE ADDITION</h3>
+            <p style={{textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '20px'}}>
+              {VOTES_TO_ENACT} votes to enact · {VOTES_TO_VETO} to veto
+            </p>
+
             <form onSubmit={handlePropose} style={{display: 'flex', gap: '10px', marginBottom: '30px', flexWrap: 'wrap'}}>
               <input 
                 type="text" 
@@ -255,7 +284,7 @@ const Scoreboard = ({ playerName }) => {
                       <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
                         <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
                             <div className="blackops" style={{fontSize: '1.5rem', color: 'var(--accent)'}}>
-                            {p.voters_for?.length || 0} <span style={{fontSize: '1rem', color: 'var(--text-muted)'}}>/ 5</span>
+                            {p.voters_for?.length || 0} <span style={{fontSize: '1rem', color: 'var(--text-muted)'}}>/ {VOTES_TO_ENACT}</span>
                             </div>
                             <button 
                             onClick={() => handleVote(p, 'for')}
@@ -272,7 +301,7 @@ const Scoreboard = ({ playerName }) => {
 
                         <div style={{display: 'flex', alignItems: 'center', gap: '8px', borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '20px'}}>
                             <div className="blackops" style={{fontSize: '1.5rem', color: 'var(--texas-red)'}}>
-                            {p.voters_against?.length || 0} <span style={{fontSize: '1rem', color: 'var(--text-muted)'}}>/ 3</span>
+                            {p.voters_against?.length || 0} <span style={{fontSize: '1rem', color: 'var(--text-muted)'}}>/ {VOTES_TO_VETO}</span>
                             </div>
                             <button 
                             onClick={() => handleVote(p, 'against')}

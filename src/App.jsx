@@ -41,7 +41,9 @@ function App() {
         <div className="hero-content animate-slide">
           <div className="hero-badge blackops">TOP SECRET ITINERARY</div>
           <h1 className="hero-title blackops">{TRIP_META.title}</h1>
-          <p className="hero-subtitle">{TRIP_META.subtitle}</p>
+          <div className="hero-tags">
+            {TRIP_META.highlights.map(h => <span className="hero-tag" key={h}>{h}</span>)}
+          </div>
         </div>
       </header>
 
@@ -55,34 +57,23 @@ function App() {
           </div>
           <div className="stat-box">
             <MapPin size={36} color="var(--accent)" style={{margin:'0 auto 15px'}} />
-            <div className="stat-value">Fort Worth</div>
+            <div className="stat-value" style={{fontSize: '1.4rem'}}>Fort Worth → Nashville</div>
             <div className="stat-label">Location</div>
           </div>
           <div className="stat-box">
             <Flame size={36} color="var(--texas-red)" style={{margin:'0 auto 15px'}} />
-            <div className="stat-value" style={{fontSize: '1.4rem'}}>{TRIP_META.weather}</div>
-            <div className="stat-label">Weather</div>
+            <div className="stat-value">{TRIP_META.weather}</div>
+            <div className="stat-label">{TRIP_META.weatherNote}</div>
           </div>
         </div>
 
-        <div style={{display: 'flex', gap: '10px', justifyContent: 'center', marginBottom: '40px', flexWrap: 'wrap'}}>
+        <div className="tab-bar">
           {TABS.map(tab => (
-            <button 
+            <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className="blackops"
-              style={{
-                padding: '15px 30px', 
-                background: activeTab === tab.id ? 'var(--texas-red)' : 'rgba(255,255,255,0.05)',
-                color: 'white',
-                border: '1px solid',
-                borderColor: activeTab === tab.id ? 'var(--texas-red)' : 'rgba(255,255,255,0.1)',
-                borderRadius: '8px', 
-                fontSize: '1.2rem',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-                letterSpacing: '1px'
-              }}
+              className={"tab" + (activeTab === tab.id ? " active" : "")}
+              aria-pressed={activeTab === tab.id}
             >
               {tab.label}
             </button>

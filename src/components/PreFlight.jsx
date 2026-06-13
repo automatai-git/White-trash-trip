@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PRE_FLIGHT_CHECKLIST } from '../data/travelData';
 
 const PreFlight = () => {
-  const [checkedItems, setCheckedItems] = useState([]);
+  const [checkedItems, setCheckedItems] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('preflightChecked')) || []; }
+    catch { return []; }
+  });
+
+  useEffect(() => {
+    localStorage.setItem('preflightChecked', JSON.stringify(checkedItems));
+  }, [checkedItems]);
 
   const toggleItem = (idx) => {
     if (checkedItems.includes(idx)) {
@@ -23,9 +30,13 @@ const PreFlight = () => {
         {PRE_FLIGHT_CHECKLIST.map((item, idx) => {
           const isChecked = checkedItems.includes(idx);
           return (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               onClick={() => toggleItem(idx)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleItem(idx); } }}
+              role="button"
+              tabIndex={0}
+              aria-pressed={isChecked}
               style={{
                 display: 'flex', 
                 alignItems: 'center', 
@@ -37,7 +48,7 @@ const PreFlight = () => {
                 transition: 'all 0.2s',
                 border: isChecked ? '1px solid var(--texas-red)' : '1px solid transparent'
               }}
-              className="interactive-card"
+              className="interactive-card focus-ring"
             >
               <div style={{
                 width: '32px', height: '32px', 
